@@ -4,11 +4,13 @@ body {
 }
 
 .backdrop {
+  display: none;
   position: absolute;
   z-index: 1;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
+  backdrop-filter: blur(2px);
 }
 
 .container-grid {

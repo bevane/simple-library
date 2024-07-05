@@ -2,6 +2,7 @@ const bookDisplay = document.querySelector('.book-display');
 const addBookButton = document.querySelector('.add-book');
 const addBookModal = document.querySelector('.add-book-modal');
 const bookModalClose = document.querySelector('.close');
+const backdrop = document.querySelector('.backdrop');
 const myLibrary = [];
 
 
@@ -48,9 +49,11 @@ function displayLibraryBooks(books) {
 
 
 addBookButton.addEventListener("click", () => {
+    backdrop.style.display = 'block';
     return addBookModal.show();
 });
 
 bookModalClose.addEventListener("click", () => {
+    backdrop.style.display = 'none';
     return addBookModal.close();
 });
