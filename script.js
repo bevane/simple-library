@@ -1,6 +1,7 @@
 const bookDisplay = document.querySelector('.book-display');
 const addBookButton = document.querySelector('.add-book');
 const addBookModal = document.querySelector('.add-book-modal');
+const submitBook = document.querySelector('.submit');
 const bookModalClose = document.querySelector('.close');
 const backdrop = document.querySelector('.backdrop');
 const myLibrary = [];
@@ -21,7 +22,7 @@ function addBookToLibrary(title, author, pages, read) {
 
 
 function displayLibraryBooks(books) {
-    for (const book in books) {
+    for (const book of books) {
         const newBook = document.createElement("div");
         newBook.className = "book";
 
@@ -53,7 +54,21 @@ addBookButton.addEventListener("click", () => {
     return addBookModal.show();
 });
 
+
 bookModalClose.addEventListener("click", () => {
+    backdrop.style.display = 'none';
+    return addBookModal.close();
+});
+
+
+submitBook.addEventListener("click", (e) => {
+    e.preventDefault();
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const pages = document.getElementById('pages').value;
+    const read = document.getElementById('read').value;
+    addBookToLibrary(title, author, pages, read);
+    displayLibraryBooks(myLibrary);
     backdrop.style.display = 'none';
     return addBookModal.close();
 });
