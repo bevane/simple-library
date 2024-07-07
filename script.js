@@ -7,7 +7,8 @@ const backdrop = document.querySelector('.backdrop');
 const myLibrary = [];
 
 
-function Book(title, author, pages, read) {
+function Book(id, title, author, pages, read) {
+    this.id = id
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -16,7 +17,8 @@ function Book(title, author, pages, read) {
 
 
 function addBookToLibrary(title, author, pages, read) {
-    const book = new Book(title, author, pages, read);
+    const id = myLibrary.length
+    const book = new Book(id, title, author, pages, read);
     return myLibrary.push(book);
 };
 
