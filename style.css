@@ -27,9 +27,11 @@ body {
 
 .book-display {
   display: grid;
+  max-width: 100vw;
   gap: 10px;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(auto-fit, 200px);
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: auto;
   border: solid black;
 }
 
