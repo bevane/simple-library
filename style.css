@@ -1,6 +1,7 @@
 body {
   background-color: #eee;
   margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .backdrop {
@@ -23,6 +24,20 @@ body {
   margin-top: 20px;
   width: 100px;
   align-self: center;
+  border: none;
+  background-color: rgb(100, 200, 100);
+  color: white;
+  padding: 8px 15px;
+  transition: background-color 0.1s;
+}
+
+.add-book:hover {
+  background-color: rgb(80, 220, 80);
+}
+
+
+.add-book:active {
+  background-color: rgb(20, 150, 20);
 }
 
 .book-display {
@@ -48,6 +63,10 @@ body {
   transition: top 0.1s;
 }
 
+.book h4 {
+  font-family: Garamond;
+}
+
 .book .by {
   font-style: italic;
 }
@@ -65,7 +84,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background 0.5s;
+  transition: background-color 0.5s;
 }
 
 .book .read.yes {
@@ -143,6 +162,7 @@ form .submit {
   border: none;
   padding: 5px 0px;
   color: white;
+  transition: background-color 0.1s;
 }
 
 form .submit:hover {
