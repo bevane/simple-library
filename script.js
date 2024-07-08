@@ -41,18 +41,35 @@ function displayLibraryBooks(books) {
         });
 
         const bookTitle = document.createElement("h4");
+        bookTitle.innerText = book.title;
+
         const by = document.createElement("p");
         by.className = "by";
         by.innerText = "by";
-        const bookAuthor = document.createElement("p");
 
+        const bookAuthor = document.createElement("p");
         bookAuthor.innerText = book.author;
-        bookTitle.innerText = book.title;
+
+
+        const bookPages = document.createElement("p");
+        bookPages.innerText = `${book.pages} pages`
+        bookPages.className = "pages";
+
+        console.log(book.read);
+        const readStatus = book.read ? "yes" : "no";
+        const bookReadContainer = document.createElement("div");
+        bookReadContainer.className = `read ${readStatus}`
+        const bookRead = document.createElement("p");
+        bookRead.innerText = `Read: ${readStatus}`
+        bookReadContainer.appendChild(bookRead);
 
         newBook.appendChild(deleteButton);
         newBook.appendChild(bookTitle);
         newBook.appendChild(by);
         newBook.appendChild(bookAuthor);
+        newBook.appendChild(bookPages);
+        newBook.appendChild(bookReadContainer);
+
         newBook.setAttribute("data-id", book.id)
 
         bookDisplay.appendChild(newBook);
@@ -77,7 +94,7 @@ submitBook.addEventListener("click", (e) => {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
     const pages = document.getElementById('pages').value;
-    const read = document.getElementById('read').value;
+    const read = document.getElementById('read').checked;
     addBookToLibrary(title, author, pages, read);
     displayLibraryBooks(myLibrary);
     backdrop.style.display = 'none';

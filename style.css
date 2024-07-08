@@ -52,6 +52,29 @@ body {
   font-style: italic;
 }
 
+.book .pages {
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+}
+
+.book .read {
+  height: 30px;
+  font-size: 0.8rem;
+  color: white;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book .read.yes {
+  background-color: green;
+}
+
+.book .read.no {
+  background-color: red;
+}
+
 .book:hover {
   top: -2px;
   box-shadow: 2px 2px 2px #999;

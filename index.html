@@ -15,8 +15,12 @@
         <div class="book">
           <button class="delete">x</button>
           <h4>Book Title</h4>
-          <p>by</p>
+          <p class="by">by</p>
           <p>Book Author</p>
+          <p class="pages">194 pages</p>
+          <div class="read yes">
+            <p>Read: yes</p>
+          </div>
         </div>
       </div>
       <dialog class="add-book-modal">
@@ -30,7 +34,7 @@
             <label for="pages">No. of pages</label>
             <input type="number" id="pages" name="pages">
             <label for="read">Finished Reading:</label>
-            <input type="checkbox" id="read" name="read">
+            <input class="read-checkbox" type="checkbox" id="read" name="read">
             <button class="submit" type="submit">Add</button>
           </div>
         </form>
