@@ -24,6 +24,7 @@ function addBookToLibrary(title, author, pages, read) {
 
 
 function displayLibraryBooks(books) {
+    bookDisplay.replaceChildren([]);
     for (const book of books) {
         const newBook = document.createElement("div");
         newBook.className = "book";
