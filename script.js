@@ -35,7 +35,6 @@ function displayLibraryBooks(books) {
         deleteButton.innerText = "x";
         deleteButton.setAttribute("data-id", book.id);
         deleteButton.addEventListener("click", (e) => {
-            console.log("start");
             e.target.parentNode.remove();
             myLibrary.splice(book.id, 1);
         });
@@ -55,13 +54,17 @@ function displayLibraryBooks(books) {
         bookPages.innerText = `${book.pages} pages`
         bookPages.className = "pages";
 
-        console.log(book.read);
         const readStatus = book.read ? "yes" : "no";
         const bookReadContainer = document.createElement("div");
         bookReadContainer.className = `read ${readStatus}`
         const bookRead = document.createElement("p");
         bookRead.innerText = `Read: ${readStatus}`
         bookReadContainer.appendChild(bookRead);
+        bookReadContainer.addEventListener("click", (e) => {
+            myLibrary[book.id].read = !myLibrary[book.id].read;
+            displayLibraryBooks(myLibrary);
+        });
+
 
         newBook.appendChild(deleteButton);
         newBook.appendChild(bookTitle);
