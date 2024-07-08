@@ -4,6 +4,7 @@ const addBookModal = document.querySelector('.add-book-modal');
 const submitBook = document.querySelector('.submit');
 const bookModalClose = document.querySelector('.close');
 const backdrop = document.querySelector('.backdrop');
+const deleteBookButtons = document.querySelectorAll('.delete');
 const myLibrary = [];
 
 
@@ -32,6 +33,12 @@ function displayLibraryBooks(books) {
         const deleteButton = document.createElement("button");
         deleteButton.className = "delete";
         deleteButton.innerText = "x";
+        deleteButton.setAttribute("data-id", book.id);
+        deleteButton.addEventListener("click", (e) => {
+            console.log("start");
+            e.target.parentNode.remove();
+            myLibrary.splice(book.id, 1);
+        });
 
         const bookTitle = document.createElement("h4");
         const by = document.createElement("p");
@@ -46,6 +53,7 @@ function displayLibraryBooks(books) {
         newBook.appendChild(bookTitle);
         newBook.appendChild(by);
         newBook.appendChild(bookAuthor);
+        newBook.setAttribute("data-id", book.id)
 
         bookDisplay.appendChild(newBook);
     }
@@ -75,3 +83,4 @@ submitBook.addEventListener("click", (e) => {
     backdrop.style.display = 'none';
     return addBookModal.close();
 });
+
