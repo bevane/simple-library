@@ -65,14 +65,31 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background 0.5s;
 }
 
 .book .read.yes {
-  background-color: green;
+  background-color: rgb(20, 100, 200);
+}
+
+.book .read.yes:hover {
+  background-color: rgb(40, 120, 220);
+}
+
+.book .read.yes:active{
+  background-color: rgb(10, 80, 180);
 }
 
 .book .read.no {
-  background-color: red;
+  background-color: #555;
+}
+
+.book .read.no:hover {
+  background-color: #666;
+}
+
+.book .read.no:active {
+  background-color: #444;
 }
 
 .book:hover {
