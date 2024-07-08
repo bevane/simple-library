@@ -61,14 +61,17 @@ body {
   position: relative;
   top: 0px;
   transition: top 0.1s;
+  flex: 0 auto;
 }
 
 .book h4 {
   font-family: Garamond;
+  text-align: center;
 }
 
 .book .by {
   font-style: italic;
+  margin: 0;
 }
 
 .book .pages {
