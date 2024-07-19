@@ -8,12 +8,18 @@ const deleteBookButtons = document.querySelectorAll('.delete');
 const myLibrary = [];
 
 
-function Book(id, title, author, pages, read) {
-    this.id = id
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(id, title, author, pages, read) {
+        this.id = id
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    toggleRead() {
+        this.read = !this.read;
+    }
 };
 
 
@@ -60,8 +66,8 @@ function displayLibraryBooks(books) {
         const bookRead = document.createElement("p");
         bookRead.innerText = `Read: ${readStatus}`
         bookReadContainer.appendChild(bookRead);
-        bookReadContainer.addEventListener("click", (e) => {
-            myLibrary[book.id].read = !myLibrary[book.id].read;
+        bookReadContainer.addEventListener("click", () => {
+            book.toggleRead();
             displayLibraryBooks(myLibrary);
         });
 
