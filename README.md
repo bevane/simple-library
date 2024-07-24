@@ -10,5 +10,9 @@ A mini project showcasing a simple library made with html, css and js
 ![](docs/demo.png)
 ![](docs/demo_add.png)
 
+## Concepts applied
+- Javascript Objects
+- HTML Dialogs and Modals
+
 ## *The Odin Project* Project
 This project was completed as part of [The Odin Project](https://www.theodinproject.com) course curriculum. Do check them out!
